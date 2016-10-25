@@ -1,11 +1,8 @@
 import Vue from 'vue'
 
-var test = new Vue({
-    el: '#test',
-    data: {
-        message: 'Hello Vue!'
-    },
-    render : test
+new Vue({
+  el: '#app',
+  data: {
+      message: "Hello Vue"
+  }
 })
-
-console.log(Vue);

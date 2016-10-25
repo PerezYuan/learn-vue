@@ -1,25 +1,38 @@
 {
-  "name": "vue-project",
-  "version": "0.0.1",
-  "description": "My first vue.js project",
-  "license": "MIT",
+  "name": "learn-vue",
+  "version": "1.0.0",
+  "description": "主要学习vue+webpack的实践",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PerezYuan/learn-vue.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PerezYuan/learn-vue/issues"
+  },
+  "homepage": "https://github.com/PerezYuan/learn-vue#readme",
   "dependencies": {
-    "vue": "^2.0.1"
+    "vue": "^2.0.3"
   },
   "devDependencies": {
-    "babel-core": "^6.17.0",
+    "babel-core": "^6.18.0",
     "babel-loader": "^6.2.5",
     "babel-plugin-transform-runtime": "^6.15.0",
-    "babel-preset-es2015": "^6.16.0",
+    "babel-preset-es2015": "^6.18.0",
     "css-loader": "^0.25.0",
     "file-loader": "^0.9.0",
     "style-loader": "^0.13.1",
     "url-loader": "^0.5.7",
     "vue-hot-reload-api": "^2.0.6",
     "vue-loader": "^9.7.0",
-    "webpack": "^2.1.0-beta.25",
-    "webpack-dev-server": "^2.1.0-beta.0",
-    "webpack-merge": "^0.14.1"
-  },
-  "author": "perezyuan<yzmspirit@sina.cn>"
+    "webpack": "^2.1.0-beta",
+    "webpack-dev-server": "^1.16.2",
+    "webpack-merge": "^0.15.0"
+  }
 }
