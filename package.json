@@ -4,6 +4,7 @@
   "description": "主要学习vue+webpack的实践",
   "main": "index.js",
   "scripts": {
+    "dev": "webpack --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,7 +19,7 @@
   },
   "homepage": "https://github.com/PerezYuan/learn-vue#readme",
   "dependencies": {
-    "vue": "^2.0.3"
+    "vue": "2.0.3"
   },
   "devDependencies": {
     "babel-core": "^6.18.0",
@@ -31,7 +32,7 @@
     "url-loader": "^0.5.7",
     "vue-hot-reload-api": "^2.0.6",
     "vue-loader": "^9.7.0",
-    "webpack": "^2.1.0-beta",
+    "webpack": "^1.13.2",
     "webpack-dev-server": "^1.16.2",
     "webpack-merge": "^0.15.0"
   }

@@ -1,4 +1,4 @@
-var path = require('path')
+var path = require('path'); //node自带的path模块
 var config = {
   entry: path.join(__dirname, 'src', 'main'),
   output: {
@@ -16,10 +16,7 @@ var config = {
     ]
   },
   resolve: {
-    extensions: ['.js', '.vue'],
-    /**
-     * Vue v2.x 之後 NPM Package 預設只會匯出 runtime-only 版本，若要使用 standalone 功能則需下列設定
-     */
+    extensions: ['','.js', '.vue'],
     alias: {
       vue: 'vue/dist/vue.js'
     }

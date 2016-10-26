@@ -7,7 +7,21 @@
   <title>Vue.js v2</title>
 </head>
 <body>
-  <div id="app">{{ message }}</div>
+    <div id="app-1">{{ message }}</div>
+    <input type="text" v-bind:val="message">
+    <div id="app-2">
+      <span v-bind:title="message">
+          Hover your mouse over me for a few seconds to see my dynamically bound title!
+      </span>
+      <p v-if="seen">Now you see me</p>
+      <button id="toggle">toggle words</button>
+      <ol>
+          <li v-for="todo in todos">
+              {{ todo.text }}
+          </li>
+      </ol>
+      <button id="addOne">add a list</button>
+    </div>
   <script src="dist/bundle.js"></script>
 </body>
 </html>
