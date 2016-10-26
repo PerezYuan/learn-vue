@@ -7,10 +7,8 @@
   <title>Vue.js v2</title>
 </head>
 <body>
-    <div id="app-1">{{ message }}</div>
-    <input type="text" v-bind:val="message">
-    <div id="app-2">
-      <span v-bind:title="message">
+    <div id="app">
+      <span v-bind:title="titleStr">
           Hover your mouse over me for a few seconds to see my dynamically bound title!
       </span>
       <p v-if="seen">Now you see me</p>
@@ -20,7 +18,10 @@
               {{ todo.text }}
           </li>
       </ol>
-      <button id="addOne">add a list</button>
+      <button v-on:click="addOne">add a list</button>
+      <p>{{ message }}</p>
+      <input v-model="message">
+      <button v-on:click="reverseMessage">Reverse Message</button>
     </div>
   <script src="dist/bundle.js"></script>
 </body>
