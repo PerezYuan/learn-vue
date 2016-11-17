@@ -35,20 +35,27 @@ var app7 = new Vue({
   el: '#app-7',
   data: {
     groceryList: [
-      { text: 'Vegetables' },
-      { text: 'Cheese' },
-      { text: 'Whatever else humans are supposed to eat' }
+      { id : "a1",text: 'Vegetables' },
+      { id : "b2",text: 'Cheese' },
+      { id : "c3",text: 'Whatever else humans are supposed to eat' }
     ]
   }
 })
 
-var data = { a: 1 }
+var data = { a: "adsad" }
 var vm = new Vue({
   el: '#example',
   data: data,
   methods : {
     changeA : function() {
-        this.a = 2;
+        this.a = "asdassssss";
+    }
+  },
+  filters: {
+    capitalize: function (value) {
+      if (!value) return ''
+      value = value.toString()
+      return value.charAt(0).toUpperCase() + value.slice(1)
     }
   }
 })
@@ -56,5 +63,5 @@ vm.$data === data // -> true
 vm.$el === document.getElementById('example') // -> true
 // $watch 是一个实例方法
 vm.$watch('a', function (newVal, oldVal) {
-  alert("修改了");
+  alert(oldVal + "修改了" + newVal);
 })
