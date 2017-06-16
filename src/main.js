@@ -10,7 +10,8 @@ var app = new Vue({
             {text : 'list1'},
             {text : 'list2'},
             {text : 'list3'}
-        ]
+        ],
+        html : '<p style="color: red">This is a label</p>'
     },
     methods: {
         reverseMessage: function () {
@@ -42,20 +43,20 @@ var app7 = new Vue({
   }
 })
 
-var data = { a: "adsad" }
+var data = { a: "oldVal" }
 var vm = new Vue({
   el: '#example',
   data: data,
   methods : {
     changeA : function() {
-        this.a = "asdassssss";
+        this.a = "newVal";
     }
   },
   filters: {
-    capitalize: function (value) {
+    capitalize: function (value, arg) {
       if (!value) return ''
       value = value.toString()
-      return value.charAt(0).toUpperCase() + value.slice(1)
+      return value.charAt(0).toUpperCase() + value.slice(1) + arg
     }
   }
 })

@@ -11,8 +11,10 @@
       <span v-bind:title="titleStr">
           Hover your mouse over me for a few seconds to see my dynamically bound title!
       </span>
+      <p v-once>THis will nerver change: {{ message }}</p>
+      <div v-html="html"></div>
       <p v-if="seen">Now you see me</p>
-      <button id="toggle">toggle words</button>
+      <button id="toggle">toggle words {{ seen ? 'seen' : 'unseen' }}</button>
       <ol>
           <li v-for="todo in todos">
               {{ todo.text }}
@@ -31,7 +33,7 @@
       {{item.text}}
     </div>
   </div>
-  <div id="example" v-bind:class="a">{{ a | capitalize }}<button v-on:click="changeA">change</button></div>
+  <div id="example" v-bind:class="a">{{ a | capitalize(a) }}<button v-on:click="changeA">change</button></div>
   <script src="dist/bundle.js"></script>
 </body>
 </html>
