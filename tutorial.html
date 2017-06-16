@@ -6,33 +6,50 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Vue.js v2</title>
 </head>
+<style>
+  * {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+</style>
 <body>
     <div id="app">
+      <!-- Date不会动态获取 v-bind用于绑定attr :title -->
       <span v-bind:title="titleStr">
           Hover your mouse over me for a few seconds to see my dynamically bound title!
       </span>
+      <!-- once只会绑定一次，会影响到绑定这个指令的节点和所有子节点 -->
       <p v-once>THis will nerver change: {{ message }}</p>
+      <!-- 双大括号只会出来纯文本，v-html返回html片段 -->
       <div v-html="html"></div>
+      <!-- v-if条件判断是否显示节点 -->
       <p v-if="seen">Now you see me</p>
       <button id="toggle">toggle words {{ seen ? 'seen' : 'unseen' }}</button>
+      <!-- v-for循环 -->
       <ol>
-          <li v-for="todo in todos">
-              {{ todo.text }}
+          <li v-for="(todo, index) in todos">
+              {{ '索引：' + index + '值：' + todo.text }}
           </li>
       </ol>
+      <!-- 绑定事件v-on @click -->
       <button v-on:click="addOne">add a list</button>
+      <!-- v-model可change的dom双向绑定 -->
       <p>{{ message }}</p>
       <input v-model="message">
       <button v-on:click="reverseMessage">Reverse Message</button>
     </div>
+    <!-- 组件化思想 js中查看app-7 -->
     <div id="app-7">
     <ol>
       <todo-item v-for="item in groceryList" v-bind:todo="item"></todo-item>
     </ol>
+    <!-- 绑定不同的类 -->
     <div v-for="item in groceryList" :class="item.id">
       {{item.text}}
     </div>
   </div>
+  <!-- capitalize接受的为方法的第二个参数 -->
   <div id="example" v-bind:class="a">{{ a | capitalize(a) }}<button v-on:click="changeA">change</button></div>
   <script src="dist/bundle.js"></script>
 </body>
