@@ -5,9 +5,20 @@ var vm = new Vue({
     data: {
         message: 'Hello'
     },
+    methods: {
+        nowMethod: function() {
+            return Date.now();
+        },
+        changeMsg: function() {
+            this.message = 'Hello';
+        }
+    },
     computed: {
         reversedMessage: function() {
             return this.message.split('').reverse().join('');
+        },
+        now: function() {
+            return Date.now();
         }
     }
 })

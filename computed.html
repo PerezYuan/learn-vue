@@ -11,6 +11,11 @@
     <div id="example">
         <p>Original message: "{{ message }}"</p>
         <p>Computed reversed message: "{{ reversedMessage }}"</p>
+        Method会在message发生变化时候重新调用
+        <p>Date: "{{ nowMethod() }}"</p>
+        Computed属性不会重新渲染
+        <p>Date: "{{ now }}"</p>
+        <button @click="changeMsg()">change message</button>
     </div>
     <script src="dist/computed.js"></script>
 </body>
