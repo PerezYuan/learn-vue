@@ -1,4 +1,4 @@
-let Vue = require('vue');
+const Vue = require('vue');
 
 var app = new Vue({
     // 需要绑定的Vue实例的节点
