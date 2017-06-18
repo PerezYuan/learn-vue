@@ -6,7 +6,11 @@ var vm = new Vue({
         message: 'Hello',
         firstName: 'Foo',
         lastName: 'Bar',
-        fullName: 'Foo Bar'
+        fullName: 'Foo Bar',
+        arr1: 1,
+        arr2: 2,
+        arr3: 3,
+        arr: '1 2 3'
     },
     methods: {
         nowMethod: function() {
@@ -27,6 +31,17 @@ var vm = new Vue({
         // fullName: function() {
         //     return this.firstName + ' ' + this.lastName;
         // }
+        arr: {
+            get: function() {
+                return this.arr1 + ' ' + this.arr2 + ' ' + this.arr3;
+            },
+            set: function(newVal) {
+                var str = newVal.split(' ');
+                this.arr1 = str[0];
+                this.arr2 = str[1];
+                this.arr3 = str[2];
+            }
+        }
     },
     // 利用watch来监听，代码重复不建议使用
     watch: {
@@ -42,3 +57,7 @@ var vm = new Vue({
 console.log(vm.reversedMessage) // -> 'olleH'
 vm.message = 'Goodbye'
 console.log(vm.reversedMessage) // -> 'eybdooG'
+
+document.getElementById('click').onclick = function() {
+    vm.arr = '5 6 7';
+}
