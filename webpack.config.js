@@ -2,7 +2,8 @@ var path = require('path'); //node自带的path模块
 var config = {
     entry: {
         tutorail: path.resolve(__dirname, 'src', 'tutorail.js'),
-        computed: path.resolve(__dirname, 'src', 'computed.js')
+        computed: path.resolve(__dirname, 'src', 'computed.js'),
+        classStyle: path.resolve(__dirname, 'src', 'classStyle.js')
     },
     output: {
         path: path.resolve(__dirname, 'dist'),

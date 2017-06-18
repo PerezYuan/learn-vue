@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>class&style</title>
+</head>
+<style>
+    .active {
+        border: 1px solid #000;
+    }
+    .text-danger {
+        color: #f00;
+    }
+</style>
+<body>
+    <!-- 利用computed属性可以直接快速得到一个data的转换 -->
+    <div id="example">
+        <div class="static"
+            v-bind:class="{ active: isActive, 'text-danger': hasError }">
+            <p>Active是有边框，Error为红色字</p>
+        </div>
+    </div>
+    <script src="dist/classStyle.js"></script>
+</body>
+</html>
