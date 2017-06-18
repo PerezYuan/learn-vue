@@ -15,10 +15,16 @@
     }
 </style>
 <body>
-    <!-- 利用computed属性可以直接快速得到一个data的转换 -->
+    <!-- v-bind:class用于绑定CSS类 -->
     <div id="example">
+        <!-- 单一变量 -->
         <div class="static"
             v-bind:class="{ active: isActive, 'text-danger': hasError }">
+            <p>Active是有边框，Error为红色字</p>
+        </div>
+        <!-- 类对象 -->
+        <div
+            v-bind:class="classObject">
             <p>Active是有边框，Error为红色字</p>
         </div>
     </div>
