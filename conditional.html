@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>conditional</title>
+</head>
+<body>
+    <!-- 利用computed属性可以直接快速得到一个data的转换 -->
+    <div id="example">
+        <button @click="changeOk()">change ok</button>
+        <h1 v-if="ok">ok值为true</h1>
+        <h1 v-else>ok值为false</h1>
+        <!-- template语法 -->
+        <template v-if="ok">
+            <h1>Title</h1>
+            <p>Paragraph 1</p>
+            <p>Paragraph 2</p>
+        </template>
+        <!-- 高度复用的子元素，通过key去处理，每次都会被销毁重组 -->
+        <template v-if="loginType === 'username'">
+            <label>Username</label>
+            <input placeholder="Enter your username" key="username">
+        </template>
+        <template v-else>
+            <label>Email</label>
+            <input placeholder="Enter your email address" key="email">
+        </template>
+        <button @click="changeType()">Toggle loginType</button>
+        <!-- v-show只会单纯得切换CSS的display
+             一般来说， v-if 有更高的切换开销，而 v-show 有更高的初始渲染开销。
+             因此，如果需要非常频繁地切换，则使用 v-show 较好；
+             如果在运行时条件不太可能改变，则使用 v-if 较好。
+         -->
+        <h1 v-show="ok">Hello!</h1>
+    </div>
+    <script src="dist/conditional.js"></script>
+</body>
+</html>
