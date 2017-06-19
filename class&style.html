@@ -13,6 +13,9 @@
     .text-danger {
         color: #f00;
     }
+    .hover:hover {
+        background-color: #ff0;
+    }
 </style>
 <body>
     <!-- v-bind:class用于绑定CSS类 -->
@@ -26,6 +29,26 @@
         <div
             v-bind:class="classObject">
             <p>Active是有边框，Error为红色字</p>
+        </div>
+        <!-- 通过computed属性 -->
+        <div
+            :class="computedObj">
+            <p>Active是有边框，Error为红色字</p>
+        </div>
+        <!-- 数组语法 -->
+        <div
+            :class="[{active: isActive}, 'text-danger']">
+            <p>Active是有边框，Error为红色字</p>
+        </div>
+        <!-- style直接写 -->
+        <div class="hover"
+            :style="{ transform: 'translate(200px)'}">
+            <p>通过style得到样式</p>
+        </div>
+        <!-- Object语法 -->
+        <div class="hover"
+            :style="styleObject">
+            <p>通过style得到样式</p>
         </div>
     </div>
     <script src="dist/classStyle.js"></script>
