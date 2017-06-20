@@ -27,11 +27,11 @@ var app = new Vue({
 Vue.component('todo-item', {
     template: `
         <li>
-        {{ title }}
-        <button v-on:click="$emit('remove')">X</button>
+            {{ name }}
+            <button v-on:click="$emit('remove')">X</button>
         </li>
     `,
-    props: ['title']
+    props: ['name']
 })
 var app2 = new Vue({
     el: '#todo-list-example',
@@ -51,3 +51,9 @@ var app2 = new Vue({
         }
     }
 })
+// 当你利用索引直接设置一个项时,不会检测到
+app2.todos[3] = 'asadada';
+// Vue.set(app2.todos, 3, asadada); app2.todos.splice(3, 1, 'asadada')
+// 修改数组长度，不会检测到
+app2.todos.length = 10;
+// app2.todos.splice(10)

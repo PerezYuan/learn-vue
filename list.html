@@ -11,7 +11,7 @@
     <div id="example">
         <!-- 基本用法 of in 均可 -->
         <ul>
-            <li v-for="(item, index) in arr">
+            <li v-for="(item, index) in arr" :key="item.id" :title="item.id">
                 {{ Parent }} - {{ index }} - {{ item.id }} - {{ item.text }}
             </li>
         </ul>
@@ -24,27 +24,40 @@
         </ul>
         <!-- 循环对象 -->
         <ul>
-            <li v-for="(item, key, index) in forObj">
+            <li v-for="(item, key, index) in forObj" :title="key">
                 {{ index}} - {{ key + ' ' + item }}
             </li>
         </ul>
     </div>
+    <!-- todoList -->
     <div id="todo-list-example">
         <input
             v-model="newTodoText"
             v-on:keyup.enter="addNewTodo"
             placeholder="Add a todo"
         >
+        <!-- 如果是v-bind:title默认的title就会被覆盖掉 -->
         <ul>
             <li
-            is="todo-item"
-            v-for="(todo, index) in todos"
-            v-bind:key="todo"
-            v-bind:title="todo"
-            v-on:remove="todos.splice(index, 1)"
+                is="todo-item"
+                v-for="(todo, index) in todos"
+                v-bind:key="todo"
+                v-bind:title="todo"
+                :name="todo"
+                v-on:remove="todos.splice(index, 1)"
             ></li>
         </ul>
     </div>
+    <!--
+        变异方法
+        push()
+        pop()
+        shift()
+        unshift()
+        splice()
+        sort()
+        reverse()
+    -->
     <script src="dist/list.js"></script>
 </body>
 </html>
